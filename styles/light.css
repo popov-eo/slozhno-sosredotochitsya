@@ -1,12 +1,73 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
+:root.theme_light {
+  --accent-color:#ff8dcb ;
+  --accent-color-rgb: 255, 141, 203;
+  --title-color: #353430 ;
+  --text-color: #353430;
+  --header-title-color: #ffc2e6;  
+  --theme-background-color: #ffc2e6;
+}
 
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --accent-color:#ff8dcb ;
+  --accent-color-rgb: 255, 141, 203;
+  --title-color: #353430 ;
+  --text-color: #353430;
+  --text-color-rgb: 53, 52, 48;
+  --header-title-color: #ffc2e6;  
+  --theme-background-color: #ffc2e6;
+
+  background-color: var(--theme-background-color);
+  background-image: url(../images/cover-image-light.png);
+}
+
+.theme_light .decorated-zone::before {
+  border-block-start: 1px solid var(--text-color);
+  border-inline-end: 1px solid var(--text-color);
+}
+
+.theme_light .decorated-zone::after {
+  border-block-end: 1px solid var(--text-color);
+  border-inline-start: 1px solid var(--text-color);
+}
+
+.theme_light .lamp {
+  visibility: hidden;
+}
+
+.theme_light .header__theme-menu-button {
+  color: var(--text-color);
+}
+
+.theme_light .header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid rgba(var(--text-color-rgb), 0.4);
+}
+
+.theme_light .header__theme-menu-button:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.theme_light .header__theme-menu-button:hover {
+  border-block-end: 1px solid var(--text-color);
+  margin-block-end: -1px;
+}
+
+.theme_light .section__title {
+  color: var(--title-color);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent-color:#ff8dcb ;
+    --accent-color-rgb: 255, 141, 203;
+    --title-color: #353430 ;
+    --text-color: #353430;
+    --header-title-color: #ffc2e6;  
+    --theme-background-color: #ffc2e6;    
+  }
+
+  .page {
+    background-image: url(../images/cover-image-light.png);
+    background-color: var(--theme-background-color);
+  }
 }

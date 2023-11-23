@@ -1,6 +1,5 @@
 .page {
   margin: 0 auto;
-  overflow-x: hidden;
   background-color: var(--theme-background-color);
   background-image: url(../images/cover-image.png);
   background-repeat: no-repeat;
@@ -96,19 +95,20 @@
   background-color: transparent;
 }
 
-.header__theme-menu-button_active {
+.header__theme-menu-button:hover {
   outline: 1px solid rgba(var(--accent-color-rgb), 0.4);
-  pointer-events: none;
+  cursor: pointer;
 }
 
 .header__theme-menu-button:focus-visible {
-  outline: 1px solid var(--accent-color);
-}
-
-.header__theme-menu-button:hover {
+  outline: none;
   margin-block-end: -1px;
   border-block-end: 1px solid var(--accent-color);
-  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+  pointer-events: none;
 }
 
 .header__title {
@@ -164,7 +164,7 @@
 }
 
 .article__title {
-  margin-block-end: var(--medium-space-size);
+  margin-block-end: var(--min-space-size);
   font-weight: 700;
   font-size: var(--min-font-size);
   font-style: normal;
@@ -202,6 +202,11 @@
   font-size: var(--min-font-size);
   font-style: normal;
   line-height: 130%;
+}
+
+.gallery .article__title,
+.tips .article__title {
+  margin-block-end: var(--medium-space-size);
 }
 
 .gallery__img-list {
@@ -243,7 +248,7 @@
 
 /* @media */
 
-@media (768px <= width < 1024px) {
+@media (768px <= width) {
   .header__title {
     margin-inline-start: calc(-1 * var(--space-main_grid-edge));
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -313,23 +318,23 @@
     gap: var(--space-main_grid-edge);
   }
 
-  .sunset {
+  .gallery__img-list-item:nth-child(1) {
     grid-area: sunset;
   }
 
-  .ice-cream {
+  .gallery__img-list-item:nth-child(2) {
     grid-area: ice-cream;
   }
 
-  .tape {
+  .gallery__img-list-item:nth-child(3) {
     grid-area: tape;
   }
 
-  .books {
+  .gallery__img-list-item:nth-child(4) {
     grid-area: books;
   }
 
-  .street {
+  .gallery__img-list-item:nth-child(5) {
     grid-area: street;
   }
 
@@ -345,11 +350,6 @@
 }
 
 @media (1024px <= width) {
-  .header__title {
-    margin-inline-start: calc(-1 * var(--space-main_grid-edge));
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
   .header__theme-menu {
     justify-self: center;
     align-self: flex-start;
@@ -360,11 +360,6 @@
     gap: var(--min-space-size);
   }
 
-  .header__text {
-    justify-self: end;
-    width: 50%;
-  }
-
   .reasons {
     display: grid;
     grid: auto / 1fr 2fr;
@@ -373,85 +368,9 @@
     gap: var(--space-main_grid-edge);
   }
 
-  .reasons .section__title {
-    grid-area: reasons-title;
-  }
-
-  .reason__article-list {
-    grid-area: reasons-list;
-  }
-
-  .distraction {
-    display: grid;
-    grid: auto auto / repeat(3, 1fr);
-    grid-template-areas: 
-      'distraction-title . .'
-      'distraction-list distraction-list distraction-list';
-    column-gap: var(--space-main_grid-edge);
-  }
-
-  .distraction .section__title {
-    grid-area: distraction-title;
-  }
-
   .distraction__article-list {
-    flex-direction: row;
+    display: grid;
+    grid: auto / repeat(3, 1fr);
     grid-area: distraction-list;
-  }
-
-  .tips {
-    display: grid;
-    grid: auto / 1fr 2fr;
-    grid-template-areas: 
-      'tips-title tips-list';
-    gap: var(--space-main_grid-edge);
-  }
-
-  .tips .section__title {
-    grid-area: tips-title;
-  }
-
-  .tips__article-list {
-    grid-area: tips-list;
-  }
-
-  .gallery__img-list {
-    display: grid;
-    grid: repeat(3, auto) / repeat(3, 1fr);
-    grid-template-areas: 
-      'sunset sunset ice-cream'
-      'tape books ice-cream'
-      'tape street street';
-    gap: var(--space-main_grid-edge);
-  }
-
-  .sunset {
-    grid-area: sunset;
-  }
-
-  .ice-cream {
-    grid-area: ice-cream;
-  }
-
-  .tape {
-    grid-area: tape;
-  }
-
-  .books {
-    grid-area: books;
-  }
-
-  .street {
-    grid-area: street;
-  }
-
-  .img {
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
-
-  .footer__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }

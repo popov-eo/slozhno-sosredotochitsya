@@ -10,7 +10,7 @@ body {
   min-inline-size: 375px;
   max-inline-size: 1440px;
   margin: 0 auto;
-  font-family: var(--main-font);
+  font-family: var(--main-font), Helvetica, sans-serif;
   font-size: 18px;
 }
 
@@ -38,7 +38,7 @@ picture {
 button,
 a {
   color: currentColor;
-  font-family: inherit;
+  font-family: inherit, Helvetica, sans-serif;
   font-size: inherit;
   line-height: inherit;
 }

@@ -38,18 +38,18 @@
   color: var(--text-color);
 }
 
-.theme_light .header__theme-menu-button_active {
-  pointer-events: none;
+.theme_light .header__theme-menu-button:hover {
   outline: 1px solid rgba(var(--text-color-rgb), 0.4);
 }
 
 .theme_light .header__theme-menu-button:focus-visible {
-  outline: 1px solid var(--text-color);
-}
-
-.theme_light .header__theme-menu-button:hover {
   border-block-end: 1px solid var(--text-color);
   margin-block-end: -1px;
+}
+
+.theme_light .header__theme-menu-button_active {
+  outline: 1px solid var(--text-color);
+  pointer-events: none;
 }
 
 .theme_light .section__title {

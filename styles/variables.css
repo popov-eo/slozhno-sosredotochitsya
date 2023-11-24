@@ -16,7 +16,6 @@
   --min-font-size: 18px;
   --main-font: 'IBM Plex mono';
 }
-
 @media (768px <= width) {
   :root {
     --space-main_grid-edge: 20px;
